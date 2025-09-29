@@ -54,4 +54,17 @@ from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train,y_test = train_test_split(X,y, test_size = 0.2, stratify = y)
 
+#Creating Rede Neural
+
+mlp = MLPClassifier (
+    hidden_layer_sizes = (64,32),
+    activation = 'relu',
+    solver = 'adam',
+    max_iter = 500,
+    #random_state = 42
+)
+
+#training 
+
+mlp.fit(X_train, y_train)
 
