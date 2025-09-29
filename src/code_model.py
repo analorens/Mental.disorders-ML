@@ -90,3 +90,11 @@ plt.xlabel("Épocas (iterações)", fontsize = 12)
 plt.ylabel("Erro (Loss)", fontsize = 12)
 plt.grid(True, linestyle = "--", alpha = 0.7)
 plt.show()
+
+#Overfitting check 
+
+train_acc = mlp.score(X_train,y_train)
+test_acc = mlp.score(X_test, y_test)
+
+print("Acuracia no treino: {train_acc:.2f}")
+print("Acurácia no teste: {test_acc: .2f}")
