@@ -19,4 +19,19 @@ print(df.info()) # general informations about base
 print(df.describe()) #numerical statistics 
 print(df.isnull().sum()) 
 
+#Handle missing values
+num_cols = df.select_dtypes(include = 'number').columns
+for col in num_cols: 
+    df[col].fillna(df[col].median(), inplace = True)
+
+    #categorical columns
+
+cat_cols = df.select_dtypes(include = 'object').columns
+for col in cat_cols:
+    df[col].fillna(df[col].mode()[0], inplace = True)
+
+#remove duplicates 
+
+df = df.drop_duplicates()
+
 
