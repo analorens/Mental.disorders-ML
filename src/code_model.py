@@ -68,3 +68,12 @@ mlp = MLPClassifier (
 
 mlp.fit(X_train, y_train)
 
+y_pred = mlp.predict(X_test)
+
+#Assessment
+
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+
+print("Acurácia:", accuracy_score(y_test,y_pred))
+print("\nRelatório de Classificação: \n", classification_report(y_test,y_pred))
+print("\n Matriz de Confusão:\n", confusion_matrix(y_test, y_pred))
