@@ -77,3 +77,16 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 print("Acurácia:", accuracy_score(y_test,y_pred))
 print("\nRelatório de Classificação: \n", classification_report(y_test,y_pred))
 print("\n Matriz de Confusão:\n", confusion_matrix(y_test, y_pred))
+
+
+#View Training Neural Network 
+
+import matplotlib.pyplot as plt
+
+plt.figure (figsize=(8,5))
+plt.plot(mlp.loss_curve_, marker = 'o', color = 'blue')
+plt.litle("Curva de Perda Durante o Treinamento", fontsize = 14)
+plt.xlabel("Épocas (iterações)", fontsize = 12)
+plt.ylabel("Erro (Loss)", fontsize = 12)
+plt.grid(True, linestyle = "--", alpha = 0.7)
+plt.show()
