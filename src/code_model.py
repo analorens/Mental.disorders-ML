@@ -34,4 +34,13 @@ for col in cat_cols:
 
 df = df.drop_duplicates()
 
+df = pd.get_dummies (df, columns = cat_cols, drop_first = True)
+
+#Normalization of numerical data
+
+from sklearn.preprocessing import StandardScaler 
+
+scaler = StandardScaler()
+df[num_cols] = scaler.fit_transform(df[num_cols])
+
 
