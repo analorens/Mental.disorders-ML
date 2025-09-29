@@ -43,4 +43,15 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 df[num_cols] = scaler.fit_transform(df[num_cols])
 
+#Preparing data for the model
+
+X = df.drop('Mental_Disorder', axis =1)
+y = df['Mental_Disorder']
+
+#training and testing
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train,y_test = train_test_split(X,y, test_size = 0.2, stratify = y)
+
 
