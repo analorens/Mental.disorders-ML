@@ -12,7 +12,13 @@ from sklearn.neural_network import MLPClassifier
 
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-df = pd.read_csv('mental_disorders_formated.csv')
+from google.colab import files
+uploaded = files.upload()
+
+import pandas as pd
+
+df = pd.read_csv("mental_disorders_dataset.csv")
+print(df.head())
 
 print(df.head()) #show fist lines for understand how the datas is organized
 print(df.info()) # general informations about base 
